@@ -57,6 +57,7 @@ public class ProductService {
 //    }
 //
     public String getDescription(int id) {
+
         return repo.getDescriptionById(id);
     }
 }
