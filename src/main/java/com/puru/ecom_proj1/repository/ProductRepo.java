@@ -20,8 +20,11 @@ public interface ProductRepo extends JpaRepository<Product,Integer> {
 @Query(value="SELECT * FROM Product p WHERE LOWER(name) like LOWER(CONCAT(:name,'%'))",nativeQuery = true)
     List<Product> findByNameContains(@Param("name") String name);
 
-    @Query(value="SELECT * FROM Product p where p.price <:price",nativeQuery = true)
+    @Query(value="SELECT * FROM Product p where p.price <:price",nativeQuery = true )
     List<Product> findByGreaterThan(@Param("price") int price);
+
+    @Query(value="SELECT * FROM PRODUCT p WHERE p.id=:id && p.quantity>0",nativeQuery = true)
+    boolean checkInStock(@Param("id") int id);
 //    or
 //    List<Product> findByNameContains(String name);
 

@@ -79,6 +79,11 @@ public class ProductController
     {
         return service.findByGreaterPriceRange(price);
     }
+    @GetMapping("toCheckInStock/{id}")
+    public boolean toCheckInStock(@PathVariable int id)
+    {
+        return service.checkInStock(id);
+    }
 
 
 }

@@ -51,4 +51,8 @@ public class ProductService {
     {
         return repo.findByGreaterThan(price);
     }
+
+    public boolean checkInStock(int id) {
+        return repo.checkInStock(id);
+    }
 }
