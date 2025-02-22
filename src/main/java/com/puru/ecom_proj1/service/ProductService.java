@@ -52,7 +52,11 @@ public class ProductService {
         return repo.findByGreaterThan(price);
     }
 
-    public boolean checkInStock(int id) {
-        return repo.checkInStock(id);
+//    public boolean checkInStock(int id) {
+//        return repo.checkInStock(id);
+//    }
+//
+    public String getDescription(int id) {
+        return repo.getDescriptionById(id);
     }
 }
